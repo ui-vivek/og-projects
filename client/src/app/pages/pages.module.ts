@@ -4,6 +4,7 @@ import { ServicessComponent } from './servicess/servicess.component';
 import { HiringComponent } from './hiring/hiring.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 
 
@@ -12,10 +13,11 @@ import { HomeComponent } from './home/home.component';
     ServicessComponent,
     HiringComponent,
     AboutComponent,
-    HomeComponent
+    HomeComponent,
+    ErrorPageComponent
   ],
   imports: [
     CommonModule
-  ],exports:[HomeComponent,AboutComponent,ServicessComponent,HomeComponent]
+  ],exports:[HomeComponent,AboutComponent,ServicessComponent,HomeComponent,ErrorPageComponent]
 })
 export class PagesModule { }

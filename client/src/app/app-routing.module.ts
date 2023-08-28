@@ -4,6 +4,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HiringComponent } from './pages/hiring/hiring.component';
 import { ServicessComponent } from './pages/servicess/servicess.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
 const routes: Routes = [
   {
@@ -21,7 +22,10 @@ const routes: Routes = [
   {
     component: ServicessComponent,
     path: 'servicess',
-  },
+  },{
+    component:ErrorPageComponent,
+    path:'**'
+  }
 ];
 
 @NgModule({
