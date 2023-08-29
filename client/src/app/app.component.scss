@@ -25,23 +25,36 @@
 }
 
 .navbar {
-    background-color: white;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  .logo {
+    width: 20px;
+    height: 20px;
+    a {
+      color: #ad8b73;
+      text-decoration: none;
+      span {
+        font-weight: bold;
+      }
+    }
+  }
   ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .logo {
-      left: 5rem;
-    }
-    .contact {
-      right: 5rem;
-    }
     li {
       display: inline;
       padding: 1rem;
       a {
         text-decoration: none;
+        color: #ad8b73;
       }
     }
+  }
+  .contact_me {
+    padding: 0.3rem 0.5rem;
+    border-radius: 1rem;
+    border: 0.5px solid #ad8b73;
+    cursor: pointer;
   }
 }
