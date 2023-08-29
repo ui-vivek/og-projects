@@ -1,0 +1,47 @@
+// Define mixins
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media screen and (max-width: 720px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+// Use mixins
+* {
+  padding: 0px;
+  margin: 0px;
+  top: 0px;
+}
+
+.navbar {
+    background-color: white;
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .logo {
+      left: 5rem;
+    }
+    .contact {
+      right: 5rem;
+    }
+    li {
+      display: inline;
+      padding: 1rem;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}

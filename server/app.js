@@ -1,4 +1,5 @@
 const express = require("express");
+const chalk =require('chalk')
 const app = express();
 const port = 4000;
 
@@ -7,6 +8,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log();
-  console.log(chalk.blue('Hello world!'));
+  console.log(chalk.inverse.blue(`server is running at port ${port}`));
 });
