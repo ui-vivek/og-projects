@@ -4,6 +4,7 @@ body {
 }
 
 #nav {
+  // background-color: lightsalmon;
   width: 100%;
   height: 2.5rem;
   .desktop {
@@ -12,7 +13,7 @@ body {
       width: 4rem;
       display: inline-block;
       margin-left: 3rem;
-      padding: 10px 9px 10px 9px; /* nav bar text */
+      // padding: 10px 9px 10px 9px; /* nav bar text */
     }
   }
 }
@@ -26,7 +27,7 @@ body {
   list-style: none; /* gets rid of bullet points */
   text-align: left;
   padding: 0px -10px 0px -10px;
-  margin: 1rem 2rem;
+  margin-right: 2rem;
   .accounts_btn {
     border: 1px solid #c96c80;
     border-radius: 5px;
