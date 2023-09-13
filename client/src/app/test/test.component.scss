@@ -1,0 +1,59 @@
+.outer-carousel {
+  position: relative;
+  left: 8vw;
+  margin-top: 5%;
+  transition: all ease-in-out 1s;
+}
+.all_cards{
+  position: relative;
+  left: 8vw;
+  margin-top: 5%;
+  transition: all ease-in-out 1s;
+}
+.carousel {
+  position: absolute;
+  left: 4%;
+  width: 70%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  overflow: visible;
+  justify-content: space-around;
+}
+.carousel img {
+  height: 5rem;
+  width: 5rem;
+  transition: all cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s;
+}
+.carousel img:nth-child(1) {
+  position: relative;
+  left: 41vw;
+  z-index: 2;
+}
+.carousel img:nth-child(2) {
+  z-index: 3;
+}
+.carousel img:nth-child(3) {
+  position: relative;
+  right: 41vw;
+  z-index: 1;
+}
+
+.carousel img:hover {
+  z-index: 4;
+  height: 6rem;
+  border: none;
+  width: 6rem;
+}
+
+.card {
+  height: 10rem;
+  width: 12rem;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
