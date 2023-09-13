@@ -49,11 +49,11 @@ export class HomeComponent implements OnInit {
       }
     });
 
-    const mediaQuery510 = window.matchMedia('(max-width: 510px)');
-    const mediaQuery770 = window.matchMedia('(max-width: 770px)');
+    const mediaQuery425 = window.matchMedia('(max-width: 425px)');
+    const mediaQuery766 = window.matchMedia('(max-width: 766px)');
 
-    mediaQuery510.addEventListener('change', mediaManagement);
-    mediaQuery770.addEventListener('change', mediaManagement);
+    mediaQuery425.addEventListener('change', mediaManagement);
+    mediaQuery766.addEventListener('change', mediaManagement);
 
     let oldViewportWidth = window.innerWidth;
 
