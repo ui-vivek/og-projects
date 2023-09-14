@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-declare var $: any;
 
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
   constructor() {}
@@ -16,8 +15,7 @@ export class HomeComponent implements OnInit {
 
     let carouselVp = document.querySelector<HTMLDivElement>('#carousel-vp');
 
-    let cardInner =
-      document.querySelector<HTMLDivElement>('#card-inner');
+    let cardInner = document.querySelector<HTMLDivElement>('#card-inner');
     let carouselInnerWidth = cardInner?.getBoundingClientRect().width;
 
     let leftValue = 0;
@@ -25,13 +23,10 @@ export class HomeComponent implements OnInit {
     // Variable used to set the carousel movement value (card's width + gap)
     const totalMovementSize =
       parseFloat(
-        window.getComputedStyle(
-          document.querySelector<HTMLElement>('.card')!
-        ).width
+        window.getComputedStyle(document.querySelector<HTMLElement>('.card')!)
+          .width
       ) +
-      parseFloat(
-        window.getComputedStyle(cardInner!).getPropertyValue('gap')
-      );
+      parseFloat(window.getComputedStyle(cardInner!).getPropertyValue('gap'));
 
     prev?.addEventListener('click', () => {
       if (leftValue !== 0) {
@@ -42,8 +37,8 @@ export class HomeComponent implements OnInit {
 
     next?.addEventListener('click', () => {
       const carouselVpWidth = carouselVp!.getBoundingClientRect().width;
-      console.log(carouselInnerWidth)
-      if ((carouselInnerWidth! - Math.abs(leftValue)) > carouselVpWidth) {
+      console.log(carouselInnerWidth);
+      if (carouselInnerWidth! - Math.abs(leftValue) > carouselVpWidth) {
         leftValue -= totalMovementSize;
         cardInner!.style.left = leftValue + 'px';
       }
