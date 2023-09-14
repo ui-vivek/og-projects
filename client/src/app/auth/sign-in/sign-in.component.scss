@@ -1,0 +1,22 @@
+.outer {
+  background-color: lightblue;
+  height: 50vh;
+  width: 50wh;
+  margin: auto;
+  form {
+    display: flex;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    input {
+      height: 20px;
+      width: 200px;
+    }
+    button {
+      padding: 1rem;
+    }
+  }
+}

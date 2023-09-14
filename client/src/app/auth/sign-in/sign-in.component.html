@@ -1,0 +1,7 @@
+<div class="outer">
+    <form [formGroup]="loginForm" (ngSubmit)="getdata()">
+        <input type="email" ngModel name="email" placeholder="enter email" formControlName="email">
+        <input type="password" ngModel name="password" placeholder="enter password" formControlName="password">
+        <button>SIGN IN</button>
+    </form>
+</div>

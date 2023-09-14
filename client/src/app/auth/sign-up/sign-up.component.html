@@ -1,0 +1,11 @@
+<div class="outer">
+
+    <form #signInForm="ngForm" (ngSubmit)="getAuth(signInForm.value)">
+        <input type="text" name="name" ngModel placeholder="Enter Your Name">
+        <input type="email" ngModel name="email" placeholder="Enter Your Email">
+        <input type="password" ngModel name="password" placeholder="Enter Password">
+        <input type="password" ngModel name="confarmpassword" placeholder="Confarm Password">
+        <button>SING UP</button>
+    </form>
+
+</div>
