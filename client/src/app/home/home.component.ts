@@ -8,33 +8,40 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   constructor() {}
 
-  data = [
+  datas = [
     {
-      url: 'https://upload.wikimedia.org/wikipedia/ru/thumb/1/1a/Microsoft_Flight_Simulator_2020_cover.jpeg/533px-Microsoft_Flight_Simulator_2020_cover.jpeg',
-      title: 'Blueberry-Almond Smoothies',
+      url: 'smoothie10.jpg',
+      title: 'Kiwi-Smoothies',
       subTitle: 'Custome1 Smoothies',
+      bg:'green'
     },
     {
-      url: 'https://upload.wikimedia.org/wikipedia/en/8/86/Forza_Horizon_5_cover_art.jpg',
-      title: 'Banana-Almond Smoothies',
+      url: 'smoothie20.jpg',
+      title: 'Org/sweet-lime',
       subTitle: 'Custome2 Smoothies',
+      bg:'orange'
     },
     {
-      url: 'https://upload.wikimedia.org/wikipedia/en/4/43/Star_Wars_Jedi_Survivor.jpg',
-      title: 'Apple-Almond Smoothies',
+      url: 'smoothie30.jpg',
+      title: 'Banana-Almond',
       subTitle: 'Custome3 Smoothies',
+      bg:'yellow'
     },
     {
-      url: 'https://upload.wikimedia.org/wikipedia/en/7/7c/Hogwarts-Legacy-cover.jpg',
-      title: 'Mango-Almond Smoothies',
+      url: 'smoothie40.jpg',
+      title: 'Mixed-Fruit',
       subTitle: 'Custome4 Smoothies',
+      bg:"purple"
     },
     {
-      url: 'https://www.theloadout.com/wp-content/sites/theloadout/2022/07/nba-2k23-cover-athletes-10.jpg',
-      title: 'Kiwi-Almond Smoothies',
+      url: 'smoothie50.jpg',
+      title: 'Mango-Smoothies',
       subTitle: 'Custome5 Smoothies',
+      bg:"lightyellow"
     },
   ];
+
+  data = [this.datas[0], this.datas[1], this.datas[2]];
 
   ngOnInit(): void {
     const prev = document.querySelector<HTMLButtonElement>('#prev');
@@ -98,55 +105,18 @@ export class HomeComponent implements OnInit {
         oldViewportWidth = newViewportWidth;
       }
     }
+
+    let index = 3;
+    setInterval(() => {
+      if (index == 4) {
+        index = 0;
+      }
+      this.data.splice(0, 1);
+      this.data.push(this.datas[index]);
+      console.log(this.data);
+      index++;
+    }, 2500);
+
     const allDis = document.querySelector('.all-discovers');
-
-    for (let i = 0; i < 3; i++) {
-      const discover = document.createElement('div');
-      discover.classList.add('discover');
-      allDis?.appendChild(discover);
-      const img = document.createElement('img');
-      img.src = `${this.data[i].url}`;
-      const title = document.createElement('p');
-      title.innerHTML = this.data[i].title;
-
-      const subTitle = document.createElement('p');
-
-      if (window.innerWidth > 425) {
-        subTitle.innerHTML = this.data[i].subTitle;
-      }
-
-      title.style.cssText = `
-      font-weight: bold;
-      font-size: small;
-      padding: 0.5rem;`;
-      subTitle.style.cssText = `
-      font-size: small;
-      `;
-
-      if (i == 1) {
-        subTitle.innerHTML = this.data[i].subTitle;
-        img.style.cssText = `
-        height: 180px;
-        width: 180px;`;
-        discover.appendChild(img);
-        discover.appendChild(title);
-        discover.appendChild(subTitle);
-        discover.style.cssText = `
-        text-align: center;
-        `;
-      } else {
-        img.style.cssText = `
-        height: 60px;
-        width: 60px;`;
-
-        discover.appendChild(img);
-        discover.appendChild(title);
-        discover.appendChild(subTitle);
-        discover.style.cssText = `
-        text-align: center;
-        opacity: 0.5;
-        `;
-      }
-    }
   }
 }
