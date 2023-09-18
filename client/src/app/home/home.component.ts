@@ -110,7 +110,7 @@ export class HomeComponent implements OnInit , AfterViewInit {
 
     next?.addEventListener('click', () => {
       const carouselVpWidth = carouselVp!.getBoundingClientRect().width;
-      console.log(carouselInnerWidth);
+      // console.log(carouselInnerWidth);
       if (carouselInnerWidth! - Math.abs(leftValue) > carouselVpWidth) {
         leftValue -= totalMovementSize;
         cardInner!.style.left = leftValue + 'px';
@@ -152,7 +152,7 @@ export class HomeComponent implements OnInit , AfterViewInit {
       }
       this.data.splice(0, 1);
       this.data.push(this.datas[index]);
-      console.log(this.data);
+      // console.log(this.data);
       index++;
     }, 2500);
 

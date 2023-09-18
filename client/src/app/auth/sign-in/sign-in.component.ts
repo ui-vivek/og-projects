@@ -13,5 +13,6 @@ export class SignInComponent {
 
   getdata(){
     console.log(this.loginForm.value)
+    
   }
 }
