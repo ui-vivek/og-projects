@@ -14,9 +14,9 @@
       <button class="Order_btn">Order Now</button>
     </div>
   </div>
-  <h2 style="text-align: center;margin: 3rem 0px;">Checkout exciting offfers !</h2>
 
   <div class="offer_section">
+    <h2 style="text-align: center;margin: 3rem 0px;">Checkout exciting offfers !</h2>
     <div class="all_card">
       <div class="arrow" id="prev"><i class='bx bx-chevron-left'></i></div>
       <div class="arrow" id="next"><i class='bx bx-chevron-right'></i></div>
@@ -68,10 +68,10 @@
       </div>
     </div>
   </div>
-  <h2 style="text-align: center;margin: 3rem 0px;font-size:1.2rem; padding: 0.5rem;">🍹Discover <span
-      style="color: #c96c80;font-size: 1.8rem;">Delicious</span> Smoothies 😋</h2>
 
   <div class="discover_section">
+    <h2 style="text-align: center;margin: 3rem 0px;font-size:1.2rem; padding: 0.5rem;">🍹Discover <span
+        style="color: #c96c80;font-size: 1.8rem;">Delicious</span> Smoothies 😋</h2>
     <div class="all-discovers">
       <ng-container *ngFor="let x of data">
         <div class="discover">
@@ -103,10 +103,10 @@
         </select>
         <label for="fruits">Add Fruits/Vegies</label>
         <select name="fruits">
+          <option value="banana">Banana</option>
           <option value="mango">Mango</option>
           <option value="kiwi">Kiwi</option>
           <option value="orange">Orange</option>
-          <option value="banana">Banana</option>
           <option value="pineapple">Pineapple</option>
           <option value="pomegranate">Pomegranate</option>
           <option value="butterscotch">Butterscotch</option>
@@ -125,22 +125,23 @@
         </select>
         <label for="protein">Select Protein</label>
         <select name="protein">
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="opel">Opel</option>
-          <option value="audi">Audi</option>
+          <option value="whey">Whey</option>
+          <option value="casein-blend">Casein Blend</option>
+          <option value="dextrins">Dextrins</option>
+          <option value="inulin">Inulin</option>
+          <option value="psyllium-husk">Psyllium Husk</option>
         </select>
         <label for="toppings">Add Toppings</label>
         <select name="toppings">
+          <option value="DryFruits">Dry Fruits</option>
           <option value="Granola">Granola</option>
           <option value="Fresh Berries">Fresh Berries</option>
           <option value="Coconut">Coconut</option>
           <option value="Seeds">Seeds</option>
-          <option value="strawberries">strawberries</option>
+          <option value="strawberries">Strawberries</option>
           <option value="Nuts and Seeds">Nuts and Seeds</option>
           <option value="chia seeds">chia seeds</option>
           <option value="Chopped Nuts">Chopped Nuts</option>
-          <option value="DryFruits">Dry Fruits</option>
           <option value="Nut Butter">Nut Butter</option>
           <option value="Cacao Nibs">Cacao Nibs</option>
         </select>
@@ -156,5 +157,5 @@
     </section>
 
   </div>
-
+  <app-footer></app-footer>
 </div>

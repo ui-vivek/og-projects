@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit , AfterViewInit {
   constructor() {}
 
   datas = [
@@ -42,6 +42,45 @@ export class HomeComponent implements OnInit {
   ];
 
   data = [this.datas[0], this.datas[1], this.datas[2]];
+
+
+  ngAfterViewInit(): void {
+    const dropdownEls = document.querySelectorAll('.dropdown-el');
+
+    dropdownEls.forEach((dropdownEl) => {
+      dropdownEl.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (!(e.target instanceof HTMLElement)) {
+          return;
+        }
+
+        // Toggle the 'expanded' class for the specific dropdown
+        if (dropdownEl.classList.contains('expanded')) {
+          dropdownEl.classList.remove('expanded');
+        } else {
+          dropdownEl.classList.add('expanded');
+        }
+
+        // Find the corresponding radio input and check it for the specific dropdown
+        const labelFor = e.target.getAttribute('for');
+        if (labelFor) {
+          const radioInput = document.getElementById(labelFor);
+          if (radioInput && radioInput instanceof HTMLInputElement) {
+            radioInput.checked = true;
+          }
+        }
+      });
+    });
+
+    document.addEventListener('click', function () {
+      // Close all dropdowns when clicking outside of any dropdown
+      dropdownEls.forEach((dropdownEl) => {
+        dropdownEl.classList.remove('expanded');
+      });
+    });
+  }
 
   ngOnInit(): void {
     const prev = document.querySelector<HTMLButtonElement>('#prev');
