@@ -10,6 +10,8 @@ import { AuthModule } from './auth/auth.module';
 import { FooterComponent } from './footer/footer.component';
 import { ErrorComponent } from './error/error.component';
 import { FaqComponent } from './faq/faq.component';
+import { TestAddressComponent } from './test-address/test-address.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { FaqComponent } from './faq/faq.component';
     FooterComponent,
     ErrorComponent,
     FaqComponent,
+    TestAddressComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AuthModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
