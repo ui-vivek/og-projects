@@ -7,13 +7,15 @@ import { HomepageCardsService } from '../services/homepage-cards.service';
 })
 export class HomeComponent implements OnInit, AfterViewInit {
   datas: any = [];
+  data: any = [];
   constructor(private cardDats: HomepageCardsService) {
     this.datas = cardDats.datas();
+    this.data = [this.datas[0], this.datas[1], this.datas[2]];
+    console.log(this.datas);
   }
 
-  data = [this.datas[0], this.datas[1], this.datas[2]];
-
   ngAfterViewInit(): void {
+    console.log('these are the data= ', this.data);
     const dropdownEls = document.querySelectorAll('.dropdown-el');
 
     dropdownEls.forEach((dropdownEl) => {

@@ -12,6 +12,7 @@ import { ErrorComponent } from './error/error.component';
 import { FaqComponent } from './faq/faq.component';
 import { TestAddressComponent } from './test-address/test-address.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     ErrorComponent,
     FaqComponent,
     TestAddressComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

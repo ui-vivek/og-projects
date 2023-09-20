@@ -302,7 +302,6 @@
       }
     }
   }
-  
 }
 @media screen and (max-width: 767px) {
   .home_page {
@@ -384,6 +383,16 @@
         & :nth-child(3) {
           display: none;
         }
+      }
+    }
+  }
+  .custom_section {
+    .left-custom {
+      img {
+        border-radius: 50%;
+        height: 200px;
+        width: 200px;
+        border: 2px solid #ffa2b6;
       }
     }
   }

@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AddressServicesService {
-  apiUrl = 'https://api.postalpincode.in/pincode/821108';
+  apiUrl = 'https://api.postalpincode.in/pincode/302019';
   constructor(private http: HttpClient) {}
 
   datas() {
