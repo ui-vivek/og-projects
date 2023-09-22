@@ -1,8 +1,8 @@
 <div class="outer">
-    <form [formGroup]="loginForm" (ngSubmit)="getdata()">
+    <form [formGroup]="loginForm" (ngSubmit)="onsignIn()">
         <input type="email" ngModel name="email" placeholder="enter email" formControlName="email">
         <input type="password" ngModel name="password" placeholder="enter password" formControlName="password">
-        <button>SIGN IN</button>
+        <button routerLink="">SIGN IN</button>
         <a routerLink="../sign-up">Not have acount</a>
     </form>
 </div>

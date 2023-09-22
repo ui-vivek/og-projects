@@ -4,15 +4,15 @@ import { HomeComponent } from './home/home.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { ErrorComponent } from './error/error.component';
-import { authGuard } from './gards/auth.guard';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
+    canActivate:[authGuard],
     path: '',
     component: HomeComponent,
   },
   {
-    canActivate:[authGuard],
     path: 'sign-in',
     component: SignInComponent,
   },
