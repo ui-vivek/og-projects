@@ -1,5 +1,4 @@
 <div class="outer">
-
     <form #signInForm="ngForm" (ngSubmit)="getAuth(signInForm.value)">
         <input type="text" name="name" ngModel placeholder="Enter Your Name">
         <input type="email" ngModel name="email" placeholder="Enter Your Email">
@@ -8,5 +7,4 @@
         <button>SING UP</button>
         <a routerLink="../sign-in">Already have acount</a>
     </form>
-
 </div>

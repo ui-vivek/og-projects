@@ -1,21 +1,28 @@
-import { Injectable } from '@angular/core';
+import { AfterViewInit, Injectable, OnInit } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   public UserSignInData: any; //set some data to check
-  email = 'student@gmail.com';
+  // email = 'student@gmail.com';
+  userEmail = 'hhh';
+  constructor() {
+    this.userEmail = JSON.parse(localStorage.getItem('UserData')!).email;
+    console.log(this.userEmail);
+  }
   public userSignInFun(SignInData: any) {
     this.UserSignInData = SignInData.value.email;
   }
 
   Token = localStorage.getItem('UserData');
 
-  checkUser(): boolean {
-    console.log("igigiui",this.UserSignInData)
-    return this.email == this.UserSignInData ? true : false;
+  isLogedIn(){
+    return localStorage.getItem('isLogedIn')=='true' ? true : false
   }
 
-  constructor() {}
+  checkUser(): boolean {
+    // console.log(JSON.parse(localStorage.getItem('UserData')!))
+    return this.userEmail == this.UserSignInData ? true : false;
+  }
 }

@@ -10,7 +10,12 @@ import { AuthService } from 'src/app/services/auth.service';
 export class SignInComponent implements OnInit {
   constructor(private _SignInData: AuthService, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this._SignInData.isLogedIn!) {
+      this.router.navigate(['home']);
+    }
+    return;
+  }
 
   loginForm = new FormGroup({
     email: new FormControl(''),
@@ -20,6 +25,6 @@ export class SignInComponent implements OnInit {
   onsignIn() {
     console.log(this.loginForm.value);
     this._SignInData.userSignInFun(this.loginForm);
-    this.router.navigate(['/'])
+    this.router.navigate(['home']);
   }
 }

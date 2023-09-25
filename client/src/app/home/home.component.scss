@@ -1,6 +1,6 @@
 .home_page {
   margin-top: 1rem;
-  height: 10rem;
+  height: auto;
   width: 100;
   .hero_section {
     height: 30rem;
@@ -53,7 +53,7 @@
   }
 
   .offer_section {
-    margin-top: 5rem;
+    // margin-top: 2rem;
     .all_card {
       position: relative;
       max-width: 900px;
@@ -65,6 +65,7 @@
       flex-wrap: nowrap;
       padding: 0.7rem;
       align-items: center;
+      z-index: -1;
       .arrow {
         position: absolute;
         top: 40%;
