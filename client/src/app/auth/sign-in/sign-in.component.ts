@@ -24,7 +24,11 @@ export class SignInComponent implements OnInit {
 
   onsignIn() {
     console.log(this.loginForm.value);
-    this._SignInData.userSignInFun(this.loginForm);
-    this.router.navigate(['home']);
+    // this._SignInData.checkUserSignInData(this.loginForm)
+    // console.log("check",this.loginForm)
+    if (this._SignInData.checkUserSignInData(this.loginForm)) {
+      localStorage.setItem('isLogedIn','true')
+      this.router.navigate(['home']);
+    }
   }
 }

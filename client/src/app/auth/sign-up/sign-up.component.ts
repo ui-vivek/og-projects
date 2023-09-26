@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Form } from '@angular/forms';
 import { Route, Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+
 
 @Component({
   selector: 'app-sign-up',
@@ -8,10 +10,15 @@ import { Route, Router } from '@angular/router';
   styleUrls: ['./sign-up.component.scss'],
 })
 export class SignUpComponent implements OnInit {
-  constructor(private router: Router) {}
-  ngOnInit(): void {}
+  constructor(private router: Router,private _SignInData: AuthService ) {}
+  ngOnInit(): void {
+    if (this._SignInData.isLogedIn!) {
+      this.router.navigate(['home']);
+    }
+    return;
+  }
 
-  getAuth(datas: Form) {
+  SignUpUser(datas: Form) {
     console.log(datas);
     localStorage.setItem('UserData', JSON.stringify(datas));
     localStorage.setItem('isLogedIn', 'true')

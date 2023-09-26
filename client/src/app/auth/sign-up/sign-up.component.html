@@ -1,5 +1,5 @@
 <div class="outer">
-    <form #signInForm="ngForm" (ngSubmit)="getAuth(signInForm.value)">
+    <form #signInForm="ngForm" (ngSubmit)="SignUpUser(signInForm.value)">
         <input type="text" name="name" ngModel placeholder="Enter Your Name">
         <input type="email" ngModel name="email" placeholder="Enter Your Email">
         <input type="password" ngModel name="password" placeholder="Enter Password">
