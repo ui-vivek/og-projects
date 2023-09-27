@@ -10,10 +10,11 @@ export class AuthService {
     let email = '';
     if (localStorage.getItem('UserData')) {
       email = SignInData.value.email;
+      return email == JSON.parse(localStorage.getItem('UserData')!).email
+        ? true
+        : false;
     }
-    return email == JSON.parse(localStorage.getItem('UserData')!).email
-      ? true
-      : false;
+    return false;
   }
 
   //---------i am only checking the email not the password for authentication.-----------

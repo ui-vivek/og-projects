@@ -1,8 +1,39 @@
-<div class="outer">
+<!-- <div class="outer">
     <form [formGroup]="loginForm" (ngSubmit)="onsignIn()">
         <input type="email" ngModel name="email" placeholder="enter email" formControlName="email">
         <input type="password" ngModel name="password" placeholder="enter password" formControlName="password">
         <button>SIGN IN</button>
         <a routerLink="../sign-up">Not have acount</a>
     </form>
-</div>
+</div> -->
+
+<section class="sign-form">
+    <div class="login-form">
+        <h1>Welcome Back!</h1>
+        <div class="login-input-container">
+            <input class="input-content" type="email" placeholder="" maxlength="50" required />
+            <label>Email</label>
+        </div>
+        <div class="login-input-container">
+            <input class="input-content" type="password" placeholder="" maxlength="50" required />
+            <label>Password</label>
+        </div>
+        <div class="login-sub">
+            <div class="remember">
+                <div id="checkbox" (click)="rememberCheckBox()">
+                    <i [style.display]="rememberCheckBoxDisplay" class='bx bx-check'></i>
+                </div>
+                <p style="font-size: 15px;">Remeber me</p>
+            </div>
+            <div>
+                <p style="font-size: 15px;color: #c96c80;cursor: pointer;">Forgot password?</p>
+            </div>
+        </div>
+        <div class="login-btn">
+            <p>Log In</p>
+        </div>
+        <div class="sign-up">
+            <p>Don't have an account? <b>Sign up!</b></p>
+        </div>
+    </div>
+</section>

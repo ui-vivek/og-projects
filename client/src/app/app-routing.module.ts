@@ -13,6 +13,11 @@ const routes: Routes = [
       import('./admin/admin.module').then((m) => m.AdminModule),
   },
   {
+    path:'',
+    redirectTo:'admin',
+    pathMatch:'full'
+  },
+  {
     path: 'sign-in',
     component: SignInComponent,
   },

@@ -9,9 +9,11 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { FaqComponent } from './components/faq/faq.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
-  declarations: [TestAComponent, TestBComponent, HeaderComponent, AdminDashboardComponent, FaqComponent, FooterComponent, HomeComponent],
+  declarations: [TestAComponent, TestBComponent, HeaderComponent, AdminDashboardComponent, FaqComponent, FooterComponent, HomeComponent, MenuComponent, ProfileComponent],
   imports: [CommonModule, AdminRoutingModule],
   exports: [TestAComponent, TestBComponent,HeaderComponent,AdminDashboardComponent],
 })

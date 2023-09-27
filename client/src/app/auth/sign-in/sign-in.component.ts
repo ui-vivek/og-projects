@@ -8,9 +8,12 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./sign-in.component.scss'],
 })
 export class SignInComponent implements OnInit {
+  rememberCheckBoxDisplay = 'none';
   constructor(private _SignInData: AuthService, private router: Router) {}
-
+  checkBoxIco: any;
   ngOnInit(): void {
+    this.checkBoxIco = document.getElementById('checkbox-ico');
+
     if (this._SignInData.checkUser()) {
       this.router.navigate(['admin']);
     }
@@ -27,8 +30,13 @@ export class SignInComponent implements OnInit {
     // this._SignInData.checkUserSignInData(this.loginForm)
     // console.log("check",this.loginForm)
     if (this._SignInData.checkUserSignInData(this.loginForm)) {
-      localStorage.setItem('isLogedIn','true')
+      localStorage.setItem('isLogedIn', 'true');
       this.router.navigate(['admin']);
     }
+  }
+
+  rememberCheckBox() {
+    this.rememberCheckBoxDisplay=='none' ? this.rememberCheckBoxDisplay='inline-block' : this.rememberCheckBoxDisplay='none'
+    
   }
 }
