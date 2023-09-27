@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,9 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  constructor(private _router:Router){}
 
   signOut(){
-    console.log("Still have to implement the logic from services.")
+   if(localStorage.getItem('isLogedIn')){
+    localStorage.setItem('isLogedIn','false')
+    this._router.navigate(['sign-in'])
+   }
   }
 
 }

@@ -16,10 +16,7 @@ export class AuthService {
       : false;
   }
 
-  isLogedIn() {
-    return localStorage.getItem('isLogedIn') == 'true' ? true : false;
-  }
-
+  //---------i am only checking the email not the password for authentication.-----------
   checkUser(): boolean {
     return localStorage.getItem('isLogedIn') == 'true' ? true : false;
   }

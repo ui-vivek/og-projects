@@ -11,8 +11,8 @@ export class SignInComponent implements OnInit {
   constructor(private _SignInData: AuthService, private router: Router) {}
 
   ngOnInit(): void {
-    if (this._SignInData.isLogedIn!) {
-      this.router.navigate(['home']);
+    if (this._SignInData.checkUser()) {
+      this.router.navigate(['admin']);
     }
     return;
   }
@@ -28,7 +28,7 @@ export class SignInComponent implements OnInit {
     // console.log("check",this.loginForm)
     if (this._SignInData.checkUserSignInData(this.loginForm)) {
       localStorage.setItem('isLogedIn','true')
-      this.router.navigate(['home']);
+      this.router.navigate(['admin']);
     }
   }
 }
