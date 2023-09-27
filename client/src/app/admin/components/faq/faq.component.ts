@@ -7,11 +7,11 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-vfaq',
-  templateUrl: './vfaq.component.html',
-  styleUrls: ['./vfaq.component.scss']
+  selector: 'app-faq',
+  templateUrl: './faq.component.html',
+  styleUrls: ['./faq.component.scss']
 })
-export class VfaqComponent implements AfterViewInit {
+export class FaqComponent implements AfterViewInit {
   @ViewChild('accordion', { static: false }) accordion!: ElementRef;
 
   constructor(private renderer: Renderer2) {}

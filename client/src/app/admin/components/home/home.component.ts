@@ -1,15 +1,16 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { HomepageCardsService } from '../services/homepage-cards.service';
+import { Component } from '@angular/core';
+import { HomeCardDataService } from '../../services/home-card-data.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent {
   datas: any = [];
   data: any = [];
-  constructor(private cardDats: HomepageCardsService) {
-    this.datas = cardDats.datas();
+  constructor(private CardDatas: HomeCardDataService) {
+    this.datas = CardDatas.datas();
     this.data = [this.datas[0], this.datas[1], this.datas[2]];
     console.log(this.datas);
   }

@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TestAComponent } from './components/test-a/test-a.component';
 import { TestBComponent } from './components/test-b/test-b.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { VhomeComponent } from './components/vhome/vhome.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   {
@@ -17,7 +17,7 @@ const routes: Routes = [
       },
       {
         path: 'home',
-        component: VhomeComponent,
+        component: HomeComponent,
       },
       {
         path: 'testa',
