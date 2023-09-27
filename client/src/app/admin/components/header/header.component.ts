@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  signOut(){
+    console.log("Still have to implement the logic from services.")
+  }
+
 }

@@ -8,10 +8,11 @@ import { VhomeComponent } from './components/vhome/vhome.component';
 import { VfooterComponent } from './components/vfooter/vfooter.component';
 import { HeaderComponent } from './components/header/header.component';
 import { VfaqComponent } from './components/vfaq/vfaq.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 @NgModule({
-  declarations: [TestAComponent, TestBComponent, VhomeComponent, VfooterComponent, HeaderComponent, VfaqComponent],
+  declarations: [TestAComponent, TestBComponent, VhomeComponent, VfooterComponent, HeaderComponent, VfaqComponent, AdminDashboardComponent],
   imports: [CommonModule, AdminRoutingModule],
-  exports: [TestAComponent, TestBComponent,VhomeComponent,VfooterComponent,HeaderComponent,VfaqComponent],
+  exports: [TestAComponent, TestBComponent,VhomeComponent,VfooterComponent,HeaderComponent,VfaqComponent,AdminDashboardComponent],
 })
 export class AdminModule {}
