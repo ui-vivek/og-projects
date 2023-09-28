@@ -9,6 +9,7 @@ import { ErrorComponent } from './error/error.component';
 import { TestAddressComponent } from './test-address/test-address.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminModule } from './admin/admin.module';
+import { NgToastModule } from 'ng-angular-popup';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AdminModule } from './admin/admin.module';
     BrowserAnimationsModule,
     AuthModule,
     HttpClientModule,
-    AdminModule
+    AdminModule,
+    NgToastModule
   ],
   providers: [],
   bootstrap: [AppComponent],

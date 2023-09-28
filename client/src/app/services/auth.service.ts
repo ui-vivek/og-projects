@@ -1,24 +1,40 @@
 import { AfterViewInit, Injectable, OnInit } from '@angular/core';
+import { NgToastService } from 'ng-angular-popup';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   userEmailOfLocal: any;
-  constructor() {
-    this.userEmailOfLocal = JSON.parse(localStorage.getItem('UserData')!).email;
+  constructor(private toast: NgToastService) {
+    if (localStorage.getItem('UserData')) {
+      this.userEmailOfLocal = JSON.parse(
+        localStorage.getItem('UserData')!
+      ).email;
+    }
   }
 
   public checkUserSignInData(SignInData: any): boolean {
     let email = '';
     if (localStorage.getItem('UserData')) {
       email = SignInData.value.email;
-      console.log("email",email)
+      console.log('email', email);
       console.log('useremail', this.userEmailOfLocal);
-      return email == this.userEmailOfLocal
-        ? true
-        : false;
+      if (email == this.userEmailOfLocal) {
+        // this.toast.success({
+        //   detail: 'SUCCESS',
+        //   summary: 'Welcome to Smoothies world.',
+        //   position: 'topCenter',
+        // });
+        return true;
+      }
+      // return email == this.userEmailOfLocal ? true : false;
     }
+    this.toast.error({
+      detail: 'ERROR',
+      summary: 'Enter Valid Details',
+      position: 'topCenter',
+    });
     return false;
   }
 

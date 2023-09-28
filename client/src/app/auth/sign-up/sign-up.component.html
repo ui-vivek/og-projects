@@ -1,4 +1,4 @@
-<div class="outer">
+<!-- <div class="outer">
     <form #signInForm="ngForm" (ngSubmit)="SignUpUser(signInForm.value)">
         <input type="text" name="name" ngModel placeholder="Enter Your Name">
         <input type="email" ngModel name="email" placeholder="Enter Your Email">
@@ -7,4 +7,33 @@
         <button>SING UP</button>
         <a routerLink="../sign-in">Already have acount</a>
     </form>
-</div>
+</div> -->
+<section class="sign-form">
+    <form #signInForm="ngForm"  class="sign-up-form">
+        <h1>Welcome Back!</h1>
+        <div class="sign-up-input-container">
+            <input class="input-content" ngModel type="test" name="name" placeholder="" maxlength="50" required />
+            <label>Name</label>
+        </div>
+        <div class="sign-up-input-container">
+            <input class="input-content" ngModel type="email" name="email" placeholder="" maxlength="50" required />
+            <label>Email</label>
+        </div>
+        <div class="sign-up-input-container">
+            <input class="input-content" ngModel placeholder="" type="password" name="password" maxlength="50"
+                required />
+            <label>Password</label>
+        </div>
+        <div class="sign-up-input-container">
+            <input class="input-content" ngModel placeholder="" type="password" name="confarmpassword" maxlength="50"
+                required />
+            <label>Confarm Password</label>
+        </div>
+        <div class="sign-up-btn" (click)="SignUpUser(signInForm)">
+            <p>Sign Up</p>
+        </div>
+        <div class="sign-in">
+            <p>Already have account <b><a routerLink="../sign-in">Sign-in!</a></b></p>
+        </div>
+    </form>
+</section>
