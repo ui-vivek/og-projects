@@ -10,10 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class SignInComponent implements OnInit {
   rememberCheckBoxDisplay = 'none';
   constructor(private _SignInData: AuthService, private router: Router) {}
-  checkBoxIco: any;
   ngOnInit(): void {
-    this.checkBoxIco = document.getElementById('checkbox-ico');
-
     if (this._SignInData.checkUser()) {
       this.router.navigate(['admin']);
     }
@@ -36,7 +33,8 @@ export class SignInComponent implements OnInit {
   }
 
   rememberCheckBox() {
-    this.rememberCheckBoxDisplay=='none' ? this.rememberCheckBoxDisplay='inline-block' : this.rememberCheckBoxDisplay='none'
-    
+    this.rememberCheckBoxDisplay == 'none'
+      ? (this.rememberCheckBoxDisplay = 'inline-block')
+      : (this.rememberCheckBoxDisplay = 'none');
   }
 }

@@ -20,7 +20,8 @@
 //     }
 //   }
 // }
-/* background-image: photo by @Milad Fakurian on Unsplash */
+
+
 .sign-form {
   display: flex;
   flex-direction: column;
@@ -43,7 +44,7 @@
     border-radius: 0.4rem;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
     min-width: 260px;
-    h1{
+    h1 {
       text-align: center;
     }
     .login-input-container {
@@ -127,9 +128,11 @@
     .sign-up b {
       font-weight: 800;
       font-size: 15px;
-      text-decoration: underline;
-      color: #c96c80;
       cursor: pointer;
+      a {
+        color: #c96c80;
+        // text-decoration: none;
+      }
     }
 
     #checkbox {

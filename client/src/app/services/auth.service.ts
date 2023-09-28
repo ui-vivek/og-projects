@@ -4,13 +4,18 @@ import { AfterViewInit, Injectable, OnInit } from '@angular/core';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor() {}
+  userEmailOfLocal: any;
+  constructor() {
+    this.userEmailOfLocal = JSON.parse(localStorage.getItem('UserData')!).email;
+  }
 
   public checkUserSignInData(SignInData: any): boolean {
     let email = '';
     if (localStorage.getItem('UserData')) {
       email = SignInData.value.email;
-      return email == JSON.parse(localStorage.getItem('UserData')!).email
+      console.log("email",email)
+      console.log('useremail', this.userEmailOfLocal);
+      return email == this.userEmailOfLocal
         ? true
         : false;
     }
