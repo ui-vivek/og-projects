@@ -128,11 +128,9 @@
     .sign-up b {
       font-weight: 800;
       font-size: 15px;
+      text-decoration: underline;
+      color: #c96c80;
       cursor: pointer;
-      a {
-        color: #c96c80;
-        // text-decoration: none;
-      }
     }
 
     #checkbox {

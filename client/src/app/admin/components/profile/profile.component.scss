@@ -1,0 +1,140 @@
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin tab {
+  @media screen and (max-width: 720px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+.profile {
+  padding: 1rem;
+  //   margin: 0 auto;
+  margin: auto;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+// .image {
+//   width: 100%;
+//   height: 200px;
+//   background-color: rgba(255, 255, 255, 0.8);
+//   border-radius: 10px 10px 0 0;
+// }
+
+// .image img {
+//   object-fit: cover;
+//   width: 100%;
+//   height: 100%;
+//   border-radius: 10px 10px 0 0;
+// }
+.image {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* Set a fixed height for the image container */
+}
+
+.image img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 5px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.containts {
+  padding: 20px;
+}
+
+.user-details {
+  justify-content: center;
+  //   background-color: lightblue;
+  align-items: center;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+  @include mobile() {
+    width: 100%;
+  }
+}
+
+.user-details input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.user-details label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.address {
+  //   background-color: lightcoral;
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+.address div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.address input {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.address label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.house,
+.city,
+.locality,
+.pin-code,
+.landmark,
+.state,
+.alternative-phone,
+.home-work {
+  width: 50%;
+}
+
+.home-work {
+  .home-work-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin: 0.2rem;
+    button {
+      margin: 0.2rem;
+      padding: 0.3rem 0.6rem;
+    }
+  }
+}
