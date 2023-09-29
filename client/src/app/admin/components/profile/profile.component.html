@@ -3,54 +3,55 @@
         <img style="height: 200px; width: 200px;" src="assets\images\offer1.png" alt="">
     </section>
     <section class="containts">
-        <form class="">
+        <form #userDetails class="">
             <div class="user-details">
                 <div class="user-name">
                     <label for="name">Name</label>
-                    <input type="text" name="name">
+                    <input type="text" [disabled]="isDisabled" name="name">
                 </div>
 
                 <div class="user-email">
                     <label for="email">Email</label>
-                    <input type="email" name="email">
+                    <input type="email" [disabled]="isDisabled" name="email">
                 </div>
 
                 <div class="user-phone">
                     <label for="phone">Phone Number</label>
-                    <input type="number" name="phone">
+                    <input type="number" [disabled]="isDisabled" name="phone">
                 </div>
 
                 <div class="user-password">
                     <label for="password">Password</label>
-                    <input type="password" name="password">
+                    <input type="password" [disabled]="isDisabled" name="password">
                 </div>
 
             </div>
+            <p style="text-align: center; margin: 2rem;">User Address</p>
             <div class="address">
 
                 <div class="house">
                     <label for="house">House Number</label>
-                    <input type="text" name="house">
+                    <input type="text" [disabled]="isDisabled" name="house">
                 </div>
 
                 <div class="city">
                     <label for="city">City/Town</label>
-                    <input type="text" name="city">
+                    <input type="text" [disabled]="isDisabled" name="city">
                 </div>
 
                 <div class="locality">
                     <label for="locality">Locality</label>
-                    <input type="text" name="locality">
+                    <input type="text" [disabled]="isDisabled" name="locality">
                 </div>
 
                 <div class="pin-code">
                     <label for="pin-code">Pin Code</label>
-                    <input type="number" name="pin-code">
+                    <input type="number" [disabled]="isDisabled" name="pin-code">
                 </div>
 
                 <div class="landmark">
                     <label for="landmark">Landmark</label>
-                    <input type="text" name="landmark">
+                    <input type="text" [disabled]="isDisabled" name="landmark">
                 </div>
 
                 <div class="state">
@@ -58,28 +59,30 @@
                     <input type="text" disabled name="state">
                 </div>
 
-                <!-- <div class="alternative-phone">
+                <div class="alternative-phone">
                     <label for="alternative-phone">Alternative</label>
-                    <input type="number" name="alternative-phone">
-                </div> -->
-
-                <!-- <section class="home-work">
-                    <label for="home-work">Home/Work</label>
-                    <input type="radio" id="home" name="home">
-                    <label for="home">Home</label><br>
-                    <input type="radio" id="work" name="work">
-                    <label for="work">Work</label><br>
-                </section> -->
-
-                <div class="home-work">
-                    <div class="home-work-btn">
-                        <button>Home</button>
-                        <button>Work</button>
-                    </div>
+                    <input type="number" [disabled]="isDisabled" name="alternative-phone">
                 </div>
 
+                <div class="home-work">
+                    <label for="">Home/Work</label>
+                    <div class="home-work-btn">
+                        <button [style.background-color]="HomeColor" class="home-btn" [disabled]="isDisabled"
+                            (click)="homeBtn()">
+                            <p>Home</p><i class='bx bx-home'></i>
+                        </button>
+                        <button [style.background-color]="WorkColor" [disabled]="isDisabled" class="work-btn"
+                            (click)="workBtn()">
+                            <p>Work</p><i class='bx bx-briefcase-alt'></i>
+                        </button>
+                    </div>
+
+                </div>
+
+                <button (click)="prevent()" class="update-profile-btn">{{changeProfileBtn}}</button>
             </div>
         </form>
+
 
     </section>
 </div>
