@@ -11,10 +11,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [TestAComponent, TestBComponent, HeaderComponent, AdminDashboardComponent, FaqComponent, FooterComponent, HomeComponent, MenuComponent, ProfileComponent],
-  imports: [CommonModule, AdminRoutingModule],
+  imports: [CommonModule, AdminRoutingModule,ReactiveFormsModule],
   exports: [TestAComponent, TestBComponent,HeaderComponent,AdminDashboardComponent],
 })
 export class AdminModule {}

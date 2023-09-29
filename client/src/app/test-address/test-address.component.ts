@@ -7,13 +7,12 @@ import { AddressServicesService } from '../services/address-services.service';
 })
 export class TestAddressComponent {
   addressData: any = [];
-  placeName:any=[]
+  placeName: any = [];
   constructor(private addresses: AddressServicesService) {
     addresses.datas().subscribe((address) => {
       this.addressData = address;
       console.log(this.addressData[0].PostOffice);
-      this.placeName=this.addressData[0].PostOffice
-
+      this.placeName = this.addressData[0].PostOffice;
     });
   }
 }
