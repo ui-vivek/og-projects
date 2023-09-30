@@ -31,7 +31,7 @@ export class SignUpComponent implements OnInit {
       this.toast.success({
         detail: 'SUCCESS',
         summary: 'Your Success Message',
-        position: 'topCenter',
+        position: 'topRight',
       });
       localStorage.setItem('UserData', JSON.stringify(datas.value));
       localStorage.setItem('isLogedIn', 'true');
@@ -43,7 +43,7 @@ export class SignUpComponent implements OnInit {
       this.toast.error({
         detail: 'ERROR',
         summary: 'Your Error Message',
-        position: 'topCenter',
+        position: 'topRight',
       });
     }
   }

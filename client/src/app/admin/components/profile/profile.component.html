@@ -7,22 +7,22 @@
             <div class="user-details">
                 <div class="user-name">
                     <label for="name">Name</label>
-                    <input type="text" [value]="userName" [disabled]="isDisabled" name="name">
+                    <input type="text" formControlName="name" [value]="userName" name="name">
                 </div>
 
                 <div class="user-email">
                     <label for="email">Email</label>
-                    <input type="email" [value]="userEmail" [disabled]="isDisabled" name="email">
+                    <input type="email" formControlName="email" [value]="userEmail" name="email">
                 </div>
 
                 <div class="user-phone">
                     <label for="phone">Phone Number</label>
-                    <input type="number" [disabled]="isDisabled" name="phone">
+                    <input type="number" formControlName="phoneNumber" name="phone">
                 </div>
 
                 <div class="user-password">
                     <label for="password">Password</label>
-                    <input type="password" value="XXXXX" [disabled]="isDisabled" name="password">
+                    <input type="password" formControlName="password" value="XXXXX" name="password">
                 </div>
 
             </div>
@@ -31,45 +31,45 @@
 
                 <div class="house">
                     <label for="house">House Number</label>
-                    <input type="text" [disabled]="isDisabled" name="house">
+                    <input type="text" formControlName="house" name="house">
                 </div>
 
                 <div class="city">
                     <label for="city">City/Town</label>
-                    <input type="text" maxlength="5" [disabled]="isDisabled" name="city">
+                    <input type="text" formControlName="city_town" maxlength="5" name="city">
                 </div>
 
                 <div class="locality">
                     <label for="locality">Locality</label>
-                    <input type="text" [disabled]="isDisabled" name="locality">
+                    <input type="text" formControlName="locality" name="locality">
                 </div>
 
                 <div class="pin-code">
                     <label for="pin-code">Pin Code</label>
-                    <!-- <input type="number" #pinCode (keyup)="getPinCode(pinCode.value)" [disabled]="isDisabled" name="pin-code"> -->
-                    <input [style.border-color]="borderColor" type="number" #pinCode (keyup)="getPinCode(pinCode.value)"
-                        [disabled]="isDisabled" name="pin-code">
+                    <!-- <input type="number" #pinCode (keyup)="getPinCode(pinCode.value)"  name="pin-code"> -->
+                    <input [style.border-color]="borderColor" formControlName="pincode" type="number" #pinCode
+                        (keyup)="getPinCode(pinCode.value)" name="pin-code">
                 </div>
 
                 <div class="landmark">
                     <label for="landmark">Landmark</label>
-                    <input type="text" [disabled]="isDisabled" name="landmark">
+                    <input type="text" formControlName="landmark" name="landmark">
                 </div>
 
                 <div class="state">
                     <label for="state">State</label>
-                    <input type="text" [value]="state" disabled name="state">
+                    <input type="text" [value]="state" name="state" disabled>
                 </div>
 
                 <div class="alternative-phone">
                     <label for="alternative-phone">Alternative</label>
-                    <input type="number" [disabled]="isDisabled" name="alternative-phone">
+                    <input type="number" formControlName="alternative_phone" name="alternative-phone">
                 </div>
 
                 <div class="home-work">
                     <label for="">Home/Work</label>
                     <div class="home-work-btn">
-                        <button [style.background-color]="HomeColor" class="home-btn" [disabled]="isDisabled"
+                        <button [style.background-color]="HomeColor" [disabled]="isDisabled" class="home-btn"
                             (click)="homeBtn()">
                             <p>Home</p><i class='bx bx-home'></i>
                         </button>

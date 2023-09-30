@@ -24,7 +24,7 @@ export class AuthService {
         // this.toast.success({
         //   detail: 'SUCCESS',
         //   summary: 'Welcome to Smoothies world.',
-        //   position: 'topCenter',
+        //   position: 'topRight',
         // });
         return true;
       }
@@ -33,7 +33,7 @@ export class AuthService {
     this.toast.error({
       detail: 'ERROR',
       summary: 'Enter Valid Details',
-      position: 'topCenter',
+      position: 'topRight',
     });
     return false;
   }

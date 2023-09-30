@@ -10,12 +10,15 @@ import { TestAddressComponent } from './test-address/test-address.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminModule } from './admin/admin.module';
 import { NgToastModule } from 'ng-angular-popup';
+import { TestBtnComponent } from './test-btn/test-btn.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ErrorComponent,
     TestAddressComponent,
+    TestBtnComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,8 @@ import { NgToastModule } from 'ng-angular-popup';
     AuthModule,
     HttpClientModule,
     AdminModule,
-    NgToastModule
+    NgToastModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
