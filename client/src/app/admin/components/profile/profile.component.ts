@@ -23,6 +23,7 @@ export class ProfileComponent implements OnInit {
   userdetailsForm!: FormGroup;
   state = '';
   HomeDelivery: boolean | undefined;
+  phoneNumber: number | undefined;
   constructor(
     private _address: AddressService,
     private toast: NgToastService,
@@ -31,6 +32,10 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.userDetails = JSON.parse(localStorage.getItem('UserData')!);
+    this.userDetails != null
+      ? (this.phoneNumber = this.userDetails.phoneNumber)
+      : console.log('no phone');
+    this.phoneNumber = this.userDetails.phoneNumber;
     if (localStorage.getItem('UserAddress')) {
       this.userAddress = JSON.parse(localStorage.getItem('UserAddress')!);
       this.state = this.userAddress.state;
@@ -50,7 +55,7 @@ export class ProfileComponent implements OnInit {
     this.userdetailsForm = this.fb.group({
       name: new FormControl(this.userName),
       email: new FormControl(this.userEmail),
-      phoneNumber: new FormControl(),
+      phoneNumber: new FormControl(this.phoneNumber),
       password: new FormControl(''),
       house: new FormControl(this.userAddress.house),
       city_town: new FormControl(this.userAddress.city_town),
@@ -125,6 +130,7 @@ export class ProfileComponent implements OnInit {
         this.userDetails.name = inputControl.value.name;
         this.userDetails.password = inputControl.value.password;
         this.userDetails.confarmpassword = inputControl.value.password;
+        this.userDetails.phoneNumber = inputControl.value.phoneNumber;
         localStorage.setItem('UserData', JSON.stringify(this.userDetails));
       }
       //set user address
