@@ -6,6 +6,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { OrdersComponent } from './components/orders/orders.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
         path: 'profile',
         component: ProfileComponent,
       },
+      {
+        path:'orders',
+        component:OrdersComponent
+      }
     ],
   },
 ];

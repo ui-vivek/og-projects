@@ -1,0 +1,19 @@
+button {
+  padding: 1rem;
+}
+.btn-style {
+  border-radius: 5px;
+  border: 1px solid #db7f79;
+  border-radius: 5px;
+  color: white;
+  background-color: #db7f79;
+  box-shadow: 0px 5px 10px #db7f79;
+  cursor: pointer;
+  font-weight: bold;
+  &:hover {
+    border: 1px solid #c96c80;
+    background-color: #c96c80;
+    box-shadow: 0px 7px 10px #c96c80;
+  }
+  padding: 1rem;
+}

@@ -1,9 +1,5 @@
-<form [formGroup]="testForm">
-    <label for="inputControl">Input Control:</label>
-    <input type="text" id="inputControl" formControlName="inputControl">
-
-    <label for="inputControll">Input Control:</label>
-    <input type="text" id="inputControll" formControlName="inputControll">
-</form>
-
-<button (click)="toggleControl()">Toggle Control</button>
+<ul>
+  <li *ngFor="let btn of allbtn; let i = index">
+    <button [ngClass]="btn.isTrue? 'btn-style': ''" (click)="onClick(i)">{{btn.name}}</button>
+  </li>
+</ul>

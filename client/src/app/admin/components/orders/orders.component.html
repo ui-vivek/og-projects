@@ -1,0 +1,25 @@
+<div class="orders">
+    <hr>
+    <div class="filter-btns">
+        <ng-container *ngFor="let btn of sortOrderBtns; let i =index">
+            <button [ngClass]="btn.isTrue ? 'btn-active' : ''" (click)="OnClick(i)">{{btn.name}}</button>
+        </ng-container>
+    </div>
+    <div class="all-ordered-items" *ngFor="let x of allOders;let index =index">
+        <div class="ordered-item">
+            <img src="assets\images\smoothie5.jpg" alt="">
+            <div class="order-details">
+                <p>{{x.name}}</p>
+                <br>
+                <small>Date : {{x.date}} <br>Time : {{x.time}}</small>
+            </div>
+            <ng-container [ngSwitch]="true">
+                <button *ngSwitchCase="x.delivered==true" class="delivered-order"><i
+                        class='bx bx-check bx-md'></i></button>
+                <button *ngSwitchCase="x.delivered==false" class="canceled-order"><i class='bx bx-x bx-md'></i></button>
+
+                <button *ngSwitchDefault (click)="getindex(index)" class="cancel-order"><i class='bx bx-x bx-md'></i></button>
+            </ng-container>
+        </div>
+    </div>
+</div>
