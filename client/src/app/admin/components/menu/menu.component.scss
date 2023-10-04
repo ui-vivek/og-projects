@@ -1,26 +1,51 @@
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin tab {
+  @media screen and (max-width: 720px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
 .menu {
-  background-color: lightblue;
+  // background-color: lightblue;
   width: 75%;
   margin: auto;
   .items {
-    margin: 1rem;
+    margin: 1rem 0rem;
     .item {
-      margin-bottom: 1rem;
-      background-color: lightgoldenrodyellow;
+      margin: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #fac2bc;
+      border-radius: 20px;
       height: 10rem;
       display: flex;
       align-items: center;
       flex-wrap: nowrap;
       justify-content: space-between;
+      cursor: pointer;
       .image-field {
         img {
+          border-radius: 50%;
           height: 150px;
           width: 150px;
+          @include mobile() {
+            height: 80px;
+            width: 80px;
+          }
         }
       }
       .name-details-price {
-        background-color: lightcoral;
-        width: 50%;
+        // background-color: lightcoral;
+        padding-left: 1rem;
+        width: 70%;
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -30,20 +55,42 @@
       }
       .ratting-cart-btn {
         display: flex;
-        height: 80%;
+        // height: 80%;
         display: flex;
         align-items: center;
         justify-content: space-around;
         flex-direction: column;
         flex-wrap: nowrap;
-        background-color: lightgreen;
+        // background-color: lightgreen;
         small {
           font-size: 12px;
         }
         .cart-btn {
-          padding: 1rem;
+          padding: 0.2rem 0.5rem;
+          margin-top: 1rem;
+          border-radius: 5px;
+          border: 1px solid #db7f79;
+          border-radius: 5px;
+          color: white;
+          background-color: #db7f79;
+          box-shadow: 0px 5px 10px #db7f79;
+          cursor: pointer;
+          font-weight: bold;
+          &:hover {
+            border: 1px solid #c96c80;
+            background-color: #c96c80;
+            box-shadow: 0px 7px 10px #c96c80;
+          }
         }
       }
+
+      @include mobile() {
+        height: 6rem;
+      }
     }
+  }
+
+  @include mobile() {
+    width: 100%;
   }
 }
