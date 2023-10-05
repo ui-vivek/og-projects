@@ -1,5 +1,6 @@
-<ul>
-  <li *ngFor="let btn of allbtn; let i = index">
-    <button [ngClass]="btn.isTrue? 'btn-style': ''" (click)="onClick(i)">{{btn.name}}</button>
+<ul *ngFor="let item of datas;let index=index">
+  <li>
+    <button mat-raised-button color="accent" (click)="openDialog(index)">{{item.name}}</button>
   </li>
+  <br><br>
 </ul>

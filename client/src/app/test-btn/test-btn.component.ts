@@ -1,27 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { Test2Component } from '../test2/test2.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-test-btn',
   templateUrl: './test-btn.component.html',
   styleUrls: ['./test-btn.component.scss'],
 })
-export class TestBtnComponent implements OnInit {
-  allbtn = [
-    { name: 'btn 1', color: 'red', isTrue: true },
-    { name: 'btn 2', color: 'blue', isTrue: false },
-    { name: 'btn 3', color: 'blue', isTrue: false },
+export class TestBtnComponent {
+  datas = [
+    { name: 'item 1', value: 10 },
+    { name: 'item 2', value: 20 },
+    { name: 'item 3', value: 30 },
+    { name: 'item 4', value: 40 },
   ];
-  ngOnInit() {}
 
-  onClick(index: any) {
-    this.allbtn[index].color = 'red';
-    this.allbtn[index].isTrue = true;
+  constructor(public dialog: MatDialog) {}
 
-    for (let i = 0; i < this.allbtn.length; i++) {
-      if (i !== index) {
-        this.allbtn[i].color = 'blue';
-        this.allbtn[i].isTrue = false;
-      }
-    }
+  openDialog(index: any) {
+    console.log(index);
+    this.dialog.open(Test2Component, {
+      data: {
+        item: index,
+      },
+    });
   }
 }

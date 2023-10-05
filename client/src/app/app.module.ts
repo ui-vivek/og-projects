@@ -12,6 +12,15 @@ import { AdminModule } from './admin/admin.module';
 import { NgToastModule } from 'ng-angular-popup';
 import { TestBtnComponent } from './test-btn/test-btn.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatButtonModule } from '@angular/material/button';
+import {
+  MatDialog,
+  MAT_DIALOG_DATA,
+  MatDialogModule,
+} from '@angular/material/dialog';
+import { Test2Component } from './test2/test2.component';
+import { NgIf } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -19,6 +28,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ErrorComponent,
     TestAddressComponent,
     TestBtnComponent,
+    Test2Component,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +38,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     AdminModule,
     NgToastModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSlideToggleModule,
+    MatButtonModule,
+    MatDialogModule,
+    NgIf,
   ],
   providers: [],
   bootstrap: [AppComponent],
