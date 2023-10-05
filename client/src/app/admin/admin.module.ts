@@ -13,10 +13,38 @@ import { MenuComponent } from './components/menu/menu.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { OrdersComponent } from './components/orders/orders.component';
+import { FavouriteComponent } from './components/favourite/favourite.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  declarations: [TestAComponent, TestBComponent, HeaderComponent, AdminDashboardComponent, FaqComponent, FooterComponent, HomeComponent, MenuComponent, ProfileComponent, OrdersComponent],
-  imports: [CommonModule, AdminRoutingModule,ReactiveFormsModule],
-  exports: [TestAComponent, TestBComponent,HeaderComponent,AdminDashboardComponent],
+  declarations: [
+    TestAComponent,
+    TestBComponent,
+    HeaderComponent,
+    AdminDashboardComponent,
+    FaqComponent,
+    FooterComponent,
+    HomeComponent,
+    MenuComponent,
+    ProfileComponent,
+    OrdersComponent,
+    FavouriteComponent,
+  ],
+  imports: [
+    CommonModule,
+    AdminRoutingModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatIconModule,
+  ],
+  exports: [
+    TestAComponent,
+    TestBComponent,
+    HeaderComponent,
+    AdminDashboardComponent,
+  ],
 })
 export class AdminModule {}

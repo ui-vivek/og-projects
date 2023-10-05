@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { FavouriteComponent } from './components/favourite/favourite.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,9 @@ const routes: Routes = [
       {
         path:'orders',
         component:OrdersComponent
+      },{
+        path:'favourite',
+        component:FavouriteComponent
       }
     ],
   },
