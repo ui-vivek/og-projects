@@ -17,6 +17,7 @@ import { FavouriteComponent } from './components/favourite/favourite.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MatButtonModule } from '@angular/material/button';
     ProfileComponent,
     OrdersComponent,
     FavouriteComponent,
+    CartComponent,
   ],
   imports: [
     CommonModule,

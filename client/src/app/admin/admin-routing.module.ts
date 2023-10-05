@@ -8,6 +8,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { FavouriteComponent } from './components/favourite/favourite.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
   {
@@ -40,12 +41,17 @@ const routes: Routes = [
         component: ProfileComponent,
       },
       {
-        path:'orders',
-        component:OrdersComponent
-      },{
-        path:'favourite',
-        component:FavouriteComponent
-      }
+        path: 'orders',
+        component: OrdersComponent,
+      },
+      {
+        path: 'favourite',
+        component: FavouriteComponent,
+      },
+      {
+        path: 'cart',
+        component: CartComponent,
+      },
     ],
   },
 ];
