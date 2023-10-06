@@ -38,9 +38,10 @@
       }
     }
     .cart-items {
-      padding: 1rem;
-      background-color: rgb(225, 225, 225);
       .item {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        background-color: rgb(225, 225, 225);
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -73,6 +74,7 @@
               padding: 0.5rem;
               border-radius: 50%;
               border: 1px solid #c96c80;
+              cursor: pointer;
             }
           }
         }
@@ -85,12 +87,12 @@
           flex-direction: column;
           flex-direction: column;
           .buttons {
-            & :nth-child(1){
+            & :nth-child(1) {
               background-color: #ffdedb;
               color: black;
             }
-            & :nth-child(2){
-              background-color: #79AC78;
+            & :nth-child(2) {
+              background-color: #79ac78;
               color: white;
               font-weight: bold;
             }
@@ -114,6 +116,7 @@
   .right {
     margin: 0.5rem;
     padding: 1rem;
+    max-height: 60vh;
     width: 30%;
     border-radius: 20px;
     background-color: #fac2bc;
