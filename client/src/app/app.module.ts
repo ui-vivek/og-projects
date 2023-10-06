@@ -21,6 +21,7 @@ import {
 } from '@angular/material/dialog';
 import { Test2Component } from './test2/test2.component';
 import { NgIf } from '@angular/common';
+import { TestBackendComponent } from './test-backend/test-backend.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { NgIf } from '@angular/common';
     TestAddressComponent,
     TestBtnComponent,
     Test2Component,
+    TestBackendComponent,
   ],
   imports: [
     BrowserModule,

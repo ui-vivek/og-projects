@@ -19,6 +19,8 @@
   "homepage": "https://github.com/ui-vivek/og-projects#readme",
   "dependencies": {
     "chalk": "^4.1.2",
-    "express": "^4.18.2"
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "superagent": "^8.1.2"
   }
 }
