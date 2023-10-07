@@ -9,25 +9,27 @@
     </form>
 </div> -->
 <section class="sign-form">
-    <form #signInForm="ngForm"  class="sign-up-form">
+    <form #signInForm="ngForm" class="sign-up-form">
         <h1>Welcome Back!</h1>
         <div class="sign-up-input-container">
-            <input class="input-content" ngModel type="test" name="name" placeholder="" maxlength="50" required />
+            <input class="input-content" ngModel [minlength]="3" type="test" name="name" placeholder="" maxlength="50"
+                required />
             <label>Name</label>
         </div>
         <div class="sign-up-input-container">
-            <input class="input-content" ngModel type="email" name="email" placeholder="" maxlength="50" required />
+            <input class="input-content" ngModel [email]="true" type="email" name="email" placeholder="" maxlength="50"
+                required />
             <label>Email</label>
         </div>
         <div class="sign-up-input-container">
-            <input class="input-content" ngModel placeholder="" type="password" name="password" maxlength="50"
-                required />
-            <label>Password</label>
+            <input class="input-content" ngModel minlength="10" placeholder="" type="number" name="phoneNumber"
+                maxlength="10" required />
+            <label>Phone Number</label>
         </div>
         <div class="sign-up-input-container">
-            <input class="input-content" ngModel placeholder="" type="password" name="confarmpassword" maxlength="50"
-                required />
-            <label>Confarm Password</label>
+            <input class="input-content" ngModel placeholder="" minlength="6" type="password" name="password"
+                maxlength="50" required />
+            <label>Password</label>
         </div>
         <div class="sign-up-btn" (click)="SignUpUser(signInForm)">
             <p>Sign Up</p>

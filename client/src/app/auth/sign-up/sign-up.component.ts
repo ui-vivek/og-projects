@@ -26,8 +26,9 @@ export class SignUpComponent implements OnInit {
   }
 
   SignUpUser(datas: NgForm) {
-    if (datas.valid && datas.value.password === datas.value.confarmpassword) {
-      console.log("i am running")
+    console.log(datas.valid);
+    if (datas.valid) {
+      console.log('i am running');
       this.toast.success({
         detail: 'SUCCESS',
         summary: 'Your Success Message',

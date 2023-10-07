@@ -4,9 +4,23 @@ const app = express();
 const dotenv = require("dotenv").config();
 const port = 4000;
 const mongoose = require("mongoose");
-const api = "https://api.postalpincode.in/pincode/302019";
 const superagent = require("superagent");
 const cors = require("cors");
+const bodyParser = require("body-parser");
+
+const apiResponse = require("./routes/testRout.js");
+const createUser = require("./routes/UserRout.js");
+
+app.use(cors());
+
+//request the body in JSON fromat
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Routs
+
+app.use("/get", apiResponse);
+app.use("/user", createUser);
 
 // DB connection
 const ConnectDataBase = async () => {
@@ -17,23 +31,6 @@ const ConnectDataBase = async () => {
     console.log(chalk.inverse.red("Can NOt Connect To DataBase", error));
   }
 };
-
-app.use(cors());
-
-app.get("/", async (req, res) => {
-  try {
-    console.log("server is running");
-
-    const response = await superagent.get(api);
-    const responseData = JSON.parse(response.text);
-
-    // Send the API data as a response to the web browser.
-    res.json(responseData);
-  } catch (error) {
-    console.error("Error fetching data from the API:", error);
-    res.status(500).send("Internal Server Error");
-  }
-});
 
 app.listen(port, () => {
   ConnectDataBase();
