@@ -9,14 +9,18 @@ import { AddressServicesService } from '../services/address-services.service';
 export class TestBackendComponent {
   datas: any;
   constructor(private _getData: AddressServicesService) {
-    _getData.datas().subscribe((data) => {
-      this.datas = data;
-    });
+    // _getData.datas().subscribe((data) => {
+    //   this.datas = data;
+    // });
+    this.datas = _getData;
   }
 
   dispData() {
     // console.log(this.data)
     // console.log(this.datas[0].PostOffice);
-    console.log("i am BatMan",this.datas)
+    // console.log('i am BatMan', this.datas);
+    this.datas.datas().subscribe((data: any) => {
+      console.log('Vanda is hear', data);
+    });
   }
 }
