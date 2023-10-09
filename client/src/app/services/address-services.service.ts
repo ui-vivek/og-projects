@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AddressServicesService {
-  apiUrl = 'http://localhost:4000/';
+  apiUrl = 'http://localhost:4000/get/api';
   constructor(private http: HttpClient) {}
 
   datas() {

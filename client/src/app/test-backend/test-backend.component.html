@@ -1,2 +1,20 @@
 <p>test-backend works!</p>
 <button (click)="dispData()">Get Data from backend</button>
+
+<form #userForm="ngForm" (ngSubmit)="signupForm(userForm.value)">
+    <input ngModel type="text" name="name">
+    <br><br>
+    <input ngModel type="email" name="email">
+    <br><br>
+    <input ngModel type="password" name="password">
+    <br><br>
+    <button>Submite</button>
+</form>
+
+<br>
+<br>
+<br>
+<br>
+<p>Post request to backend test</p>
+<input #pin type="number" name="pin">
+<button (click)="postTest(pin.value)"> Test BTN</button>

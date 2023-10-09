@@ -15,11 +15,12 @@ app.use(cors());
 
 //request the body in JSON fromat
 app.use(express.json());
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routs
 
-// app.use("/get", apiResponse);//for testing
+// app.use("/get", apiResponse); //for testing
 app.use("/user", createUser);
 
 // DB connection

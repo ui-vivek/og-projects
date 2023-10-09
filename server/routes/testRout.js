@@ -1,10 +1,11 @@
 const express = require("express");
 const superagent = require("superagent");
 const TestDB = require("../models/TestDb");
-const api = "https://api.postalpincode.in/pincode/302019";
+const api = "https://api.postalpincode.in/pincode/821108";
 
 const router = express.Router();
 
+//get request
 // router.get("/api", async (req, res, next) => {
 //   try {
 //     const response = await superagent.get(api);
@@ -16,6 +17,33 @@ const router = express.Router();
 //     res.status(500).send("Internal server error");
 //   }
 // });
+
+//GET request Test with params //this is working fine
+// router.get("/api", async (req, res, next) => {
+//   try {
+//     console.log(req.query.pin);
+//     const response = await superagent.get(
+//       `https://api.postalpincode.in/pincode/${req.query.pin}`
+//     );
+//     res.send(JSON.parse(response.text));
+//   } catch (error) {
+//     console.log("Error to connect with api");
+//     return res.status(500).send("Internal server error" + error);
+//   }
+// });
+
+router.post("/api", async (req, res, next) => {
+  try {
+
+    console.log(req.body)
+    // console.log(req.body.pin);
+    // const response=await superagent.get(`https://api.postalpincode.in/pincode/${req.body.pin}`)
+    return res.send(req.body);
+  } catch (error) {
+    console.log("error to get datas", error);
+    return res.status(500).send("Eror to get data from api" + error);
+  }
+});
 
 // router.post("/api", async (req, res, next) => {
 //   try {

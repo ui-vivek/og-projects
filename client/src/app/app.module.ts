@@ -14,6 +14,7 @@ import { TestBtnComponent } from './test-btn/test-btn.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 import {
   MatDialog,
   MAT_DIALOG_DATA,
@@ -35,6 +36,7 @@ import { TestBackendComponent } from './test-backend/test-backend.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     BrowserAnimationsModule,
     AuthModule,
     HttpClientModule,
