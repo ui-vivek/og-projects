@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routs
 
-app.use("/get", apiResponse);
+// app.use("/get", apiResponse);//for testing
 app.use("/user", createUser);
 
 // DB connection
