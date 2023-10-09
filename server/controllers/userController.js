@@ -1,5 +1,6 @@
 const User = require("../models/User");
 const bcryptjs = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 //Sign-Up user
 exports.userController = async (req, res, next) => {
@@ -7,10 +8,9 @@ exports.userController = async (req, res, next) => {
     console.log(req.body);
     if (req.body && req.body != "") {
       let { name, email, phoneNumber, password } = req.body;
+
       const salt = await bcryptjs.genSalt(10);
       const hashPassword = await bcryptjs.hash(password, salt);
-      console.log(password);
-      console.log(hashPassword);
       password = hashPassword;
       const newUser = User({ name, email, phoneNumber, password });
 
@@ -21,9 +21,22 @@ exports.userController = async (req, res, next) => {
       }
 
       // If new user, then save to the database
-      // localStorage.setItem("isLogedIn", "true");
-      await newUser.save();
-      return res.status(201).json({ message: "User Created" });
+      const user = await newUser.save();
+
+      // Create token
+      const token = jwt.sign(
+        { user_id: user._id, email },
+        process.env.TOKEN_KEY,
+        {
+          expiresIn: "2h",
+        }
+      );
+      return res
+        .cookie("access_token", token, { httpOnly: true })
+        .status(200)
+        .json("token created");
+
+      // return res.status(201).json({ message: "User Created" });
     }
   } catch (error) {
     console.log("Internal Server Error", error);
