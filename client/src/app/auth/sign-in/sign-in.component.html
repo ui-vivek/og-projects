@@ -8,7 +8,7 @@
 </div> -->
 
 <section class="sign-form">
-    <form [formGroup]="loginForm" (ngSubmit)="onsignIn()" class="login-form">
+    <form [formGroup]="loginForm" (ngSubmit)="signIn()" class="login-form">
         <h1>Welcome Back!</h1>
         <div class="login-input-container">
             <input class="input-content" ngModel type="email" name="email" placeholder="" formControlName="email"
@@ -31,7 +31,7 @@
                 <p style="font-size: 15px;color: #c96c80;cursor: pointer;">Forgot password?</p>
             </div>
         </div>
-        <div class="login-btn" (click)="onsignIn()">
+        <div class="login-btn" (click)="signIn()">
             <p>Log In</p>
         </div>
         <div class="sign-up">

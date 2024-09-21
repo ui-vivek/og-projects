@@ -12,6 +12,8 @@ import { NgToastService } from 'ng-angular-popup';
   styleUrls: ['./sign-up.component.scss'],
 })
 export class SignUpComponent implements OnInit {
+  showPassword = false;
+  showConfirmPassword = false;
   @ViewChild('signInForm') signInForm!: NgForm;
   constructor(
     private router: Router,
@@ -24,20 +26,10 @@ export class SignUpComponent implements OnInit {
     }
     return;
   }
-  //TODO -- rest of the code for the sign-up is remaining
   async SignUpUser(datas: NgForm) {
-    console.log(datas.valid);
-    console.log(datas.value);
-
     if (datas.valid) {
       const UserSignUpData = datas.value;
-      await this._SignInData.SignUpUser(UserSignUpData); // save to mongodb
-      this.toast.success({
-        detail: 'SUCCESS',
-        summary: 'Your Success Message',
-        position: 'topRight',
-      });
-      this.router.navigate(['admin']);
+      await this._SignInData.SignUpUser(UserSignUpData); 
     } else {
       console.log('Form is invalid');
       this.toast.error({
@@ -46,26 +38,5 @@ export class SignUpComponent implements OnInit {
         position: 'topRight',
       });
     }
-
-    // if (datas.valid) {
-    //   console.log('i am running');
-    //   this.toast.success({
-    //     detail: 'SUCCESS',
-    //     summary: 'Your Success Message',
-    //     position: 'topRight',
-    //   });
-    //   localStorage.setItem('UserData', JSON.stringify(datas.value));
-    //   localStorage.setItem('isLogedIn', 'true');
-    //   this.router.navigate(['sign-in']);
-    //   console.log('Form submitted');
-    //   datas.ngSubmit.emit();
-    // } else {
-    //   console.log('Form is invalid');
-    //   this.toast.error({
-    //     detail: 'ERROR',
-    //     summary: 'Your Error Message',
-    //     position: 'topRight',
-    //   });
-    // }
   }
 }

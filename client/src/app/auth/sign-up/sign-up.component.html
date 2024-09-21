@@ -12,7 +12,7 @@
     <form #signInForm="ngForm" class="sign-up-form">
         <h1>Welcome Back!</h1>
         <div class="sign-up-input-container">
-            <input class="input-content" ngModel [minlength]="3" type="test" name="name" placeholder="" maxlength="50"
+            <input class="input-content" ngModel [minlength]="3" type="test" name="fullname" placeholder="" maxlength="50"
                 required />
             <label>Name</label>
         </div>
@@ -27,9 +27,20 @@
             <label>Phone Number</label>
         </div>
         <div class="sign-up-input-container">
-            <input class="input-content" ngModel placeholder="" minlength="6" type="password" name="password"
+            <input class="input-content" ngModel placeholder="" minlength="6" [type]="showPassword ? 'text' : 'password'" name="password"
                 maxlength="50" required />
             <label>Password</label>
+            <button class="password-toggle" type="button" (click)="showPassword = !showPassword">
+                <i class="fa" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+            </button>
+        </div>        
+        <div class="sign-up-input-container">
+            <input class="input-content" ngModel placeholder="" minlength="6"  name="confirmpassword"
+                maxlength="50" required #confirmpassword="ngModel" />
+            <label>Confirm Password</label>
+            <div *ngIf="signInForm.controls['password'].value !== signInForm.controls['confirmpassword'].value && confirmpassword.touched">
+                <p class="error-message" style="color: red;">Passwords do not match</p>
+            </div>
         </div>
         <div class="sign-up-btn" (click)="SignUpUser(signInForm)">
             <p>Sign Up</p>

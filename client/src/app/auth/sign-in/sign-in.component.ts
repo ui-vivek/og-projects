@@ -22,18 +22,10 @@ export class SignInComponent implements OnInit {
     password: new FormControl(''),
   });
 
-  onsignIn() {
+  signIn() {
     console.log(this.loginForm.value);
-    // this._SignInData.checkUserSignInData(this.loginForm)
-    // console.log("check",this.loginForm)
-    // if (this._SignInData.checkUserSignInData(this.loginForm)) {
-    // localStorage.setItem('isLogedIn', 'true');
-    // this.router.navigate(['admin']);
-    // }
 
-    // this._SignInData.checkUserSignInData(this.loginForm);
-
-    if (this._SignInData.checkUserSignInData(this.loginForm)) {
+    if (this._SignInData.SignInUser(this.loginForm)) {
       localStorage.setItem('isLogedIn', 'true');
       this.router.navigate(['admin']);
     }
